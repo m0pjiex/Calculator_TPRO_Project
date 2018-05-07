@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <iomanip>
-#include "Function.h"
+#include "function.h"
 
 using namespace std;
 
