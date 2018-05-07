@@ -1,15 +1,19 @@
 #include <iostream>
+#include <math.h>
+#include <iomanip>
+#include "function.h"
 using namespace std;
 
-int main(){
-cout <<"Введите число: ";
-int a;
-cin >> a;
-cout << endl;
-cout <<"Введите число: ";
-int b;
-cin >> b;
-cout << endl;
-int c = a + b;
-cout << c << endl;
+bool done = 0;
+
+int main()
+{
+
+	while (!done)
+
+	{
+		done = ShowMenu();
+	}
+
+	return 0;
 }
