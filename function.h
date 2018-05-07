@@ -5,6 +5,7 @@
 #include <iomanip>
 #include "Function.h"
 
+bool ShowMenu(); 
 void Error();       
 void Sum();         
 void Sub();         
