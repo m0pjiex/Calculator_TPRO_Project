@@ -4,6 +4,7 @@
 #include "function.h"
 using namespace std;
 
+
 bool done = 0;
 
 int main()
