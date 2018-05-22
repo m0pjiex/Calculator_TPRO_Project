@@ -29,6 +29,8 @@ bool ShowMenu()
 	else if (menu == 7)
 		Power();
 	else if (menu == 8)
+		Percent();
+	else if (menu == 9)
 		return true;
 	else
 		Error();
@@ -107,4 +109,13 @@ void Power()
 	cout << "Enter the degree: ";
 	cin >> b;
 	cout << a << "^" << b << " = " << pow(a, b) << endl;
+}
+
+void Percent() {
+	double a, b;
+	cout << "Enter the number ";
+	cin >> a;
+	cout << "Enter percent ";
+	cin >> b;
+	cout << "%" << b << " ot " << a << " = " << (a * b) / 100 << endl;
 }
