@@ -1,39 +1,29 @@
-#Компилятор
-CC=g++
-#Ключи компиляции
-CFLAGS=-Wall -Werror -c
+all:checkdir bin/calcul
 
-#Путь к src
-SRC=src/
-#Путь к build
-BUILD=build/
-#Путь к bin
-BIN=bin/
-#Перечень объектных фаилов
-objects=$(BUILD)main.o $(BUILD)function.o 
-#Исходники
-sources=$(SRC)main.cpp $(SRC)function.cpp 
-#Исполняемый фаил
-EXE=$(BIN)main
+test:bin/calcul-test
 
-.PHONY: all clean
+bin/calcul:build/calc.o build/function.o 
+	g++ build/calc.o  build/function.o -o bin/calcul -lm
 
-all: bin build $(EXE)
+bin/calcul-test: build/main_test.o build/calc.o 
+	g++ Wall -Werror build/main_test.o build/calc.o -o bin/calcul-test -lm
 
-$(EXE): $(objects)
-	$(CC) $(objects) -o $@
+build/function.o:src/function.cpp
+	g++ -c src/function.cpp -o build/function.o -Wall -Werror
 
-$(BUILD)main.o: $(SRC)main.cpp 
-	$(CC) $(CFLAGS) $(SRC)main.cpp -o $@
-	
-$(BUILD)function.o: $(SRC)function.cpp $(SRC)function.h 
-	$(CC) $(CFLAGS) $(SRC)function.cpp -o $@
+build/calc.o:src/main.cpp
+	g++ -c src/main.cpp -o build/calc.o -Wall -Werror
 
 
-	
-bin:
-	mkdir bin
-build:
-	mkdir build
+build/main_test.o: tests/main.c
+	gcc -I thirdparty -I src -c tests/main.c -o build/main_test.o
+
+checkdir:
+	@if [ -d bin  ];then echo ; else mkdir bin;fi
+	@if [ -d build  ];then echo ; else mkdir build;fi
+
+.PHONY:clean
+
 clean:
-	-rm -rf build bin
+	rm build/*.o
+	rm bin/*.exe
