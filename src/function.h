@@ -15,3 +15,4 @@ void Div();
 void Sqrt();        
 void Radical();     
 void Power();  
+void Percent();
