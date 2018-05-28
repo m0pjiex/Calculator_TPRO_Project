@@ -6,7 +6,7 @@
 #include "function.h"
 
 
-bool ShowMenu(); 
+bool menu(); 
 void Error();       
 void Sum();         
 void Sub();         
