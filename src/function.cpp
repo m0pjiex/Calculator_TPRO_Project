@@ -13,7 +13,7 @@ bool menu() {
 
     cout << "1. Addition   2. Computation  3. Multiplication  4. Division" << endl;
     cout << "5. Square root extraction  6. Root of any degree  7. Exponentiation " << endl;
-    cout << "8. Percent  9. Factorial  10. Calculating the area of a circle " << endl;
+    cout << "8. Percent  9. Factorial  10. Calculating the area of a circle   11. EXIT" << endl;
     cout << endl;	
     cin >> menu;
     cout << endl;
@@ -114,7 +114,7 @@ bool menu() {
     cout << endl;
     }
 
-    else if (menu == 11) {
+    else if (menu == 12) {
 	    return true;
     } else {
 	    Error();
