@@ -17,3 +17,4 @@ double Radical(double a, double b);
 double Power(double a, double b);  
 double Percent(double a, double b);
 unsigned long int fact(unsigned long int);
+double Area_of_circle(double R);

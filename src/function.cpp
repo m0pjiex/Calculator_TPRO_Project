@@ -13,7 +13,7 @@ bool menu() {
 
     cout << "1. Addition   2. Computation  3. Multiplication  4. Division" << endl;
     cout << "5. Square root extraction  6. Root of any degree  7. Exponentiation " << endl;
-    cout << "8. Percent  9. Factorial " << endl;
+    cout << "8. Percent  9. Factorial  10. Calculating the area of a circle " << endl;
     cout << endl;	
     cin >> menu;
     cout << endl;
@@ -105,8 +105,16 @@ bool menu() {
     }
     cout << endl;
     }
- 
+
     else if (menu == 10) {
+    double R;
+    cout << "Enter the radius of the circle: ";
+    cin >> R;
+    cout << "Area of a circle: " << Area_of_circle(R) << endl;
+    cout << endl;
+    }
+
+    else if (menu == 11) {
 	    return true;
     } else {
 	    Error();
@@ -160,6 +168,9 @@ unsigned long int fact(unsigned long int N) {
     return result;
 }
 
+double Area_of_circle(double R) {
+    return 3.14 * R * R;
+}
 
 
 
