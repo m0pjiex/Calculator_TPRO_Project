@@ -114,7 +114,7 @@ bool menu() {
     cout << endl;
     }
 
-    else if (menu == 12) {
+    else if (menu == 11) {
 	    return true;
     } else {
 	    Error();
