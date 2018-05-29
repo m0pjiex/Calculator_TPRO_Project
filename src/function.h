@@ -16,4 +16,4 @@ double Sqrt(double a);
 double Radical(double a, double b);     
 double Power(double a, double b);  
 double Percent(double a, double b);
-long double fact(double N);
+unsigned long int fact(unsigned long int);

@@ -5,12 +5,15 @@
 
 using namespace std;
 
+int i = 0;
+unsigned long int result;
+
 bool menu() {
     short menu;
 
     cout << "1. Addition   2. Computation  3. Multiplication  4. Division" << endl;
     cout << "5. Square root extraction  6. Root of any degree  7. Exponentiation " << endl;
-    cout << "8. Percent " << endl;	
+    cout << "8. Percent  9. Factorial " << endl;	
     cin >> menu;
 
     if (menu == 1) {
@@ -84,10 +87,12 @@ bool menu() {
     }
 
     else if (menu == 9) {
-    double N;
+    int n;
     cout << "Enter the number to calculate the factorial: ";
-    cin >> N;
-    cout << "The factorial for the number " << N << " = " << fact(N) << endl;
+    cin >> n;
+    for(int j = 1; j <= n; j++) {
+        cout << j << "!" << " = " << fact(j) << endl;
+    }
     }
  
     else if (menu == 10) {
@@ -135,17 +140,15 @@ double Percent(double a, double b) {
     return (a * b) / 100;   
 }
 
-long double fact(double N) {
-    if (N < 0) {
-       return 0;
+unsigned long int fact(unsigned long int N) {
+    if (N == 1 || N == 0) {
+        return 1;
     }
-
-    if (N == 0) {
-       return 1;
-    } else {
-      return N * fact(N - 1);
-    }
+    i++;
+    result = N * fact(N - 1);
+    return result;
 }
+
 
 
 
