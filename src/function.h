@@ -8,11 +8,11 @@
 
 bool menu(); 
 void Error();       
-void Sum();         
-void Sub();         
-void Mul();         
-void Div();         
-void Sqrt();        
-void Radical();     
-void Power();  
-void Percent();
+double Sum(double a, double b);         
+double Sub(double a, double b);         
+double Mul(double a, double b);         
+double Div(double a, double b);         
+double Sqrt(double a);        
+double Radical(double a, double b);     
+double Power(double a, double b);  
+double Percent(double a, double b);

@@ -14,35 +14,73 @@ bool menu() {
     cin >> menu;
 
     if (menu == 1) {
-       Sum();
+    double a, b;
+    cout << "Enter the first number: ";
+    cin >> a;
+    cout << "Enter the second number: ";
+    cin >> b;
+    cout << a << " + " << b << " = " << setprecision(8) << Sum(a,b) << endl; 
     }
 
     else if (menu == 2) {
-	    Sub();
+    double a, b;
+    cout << "Enter the first number: ";
+    cin >> a;
+    cout << "Enter the second number: ";
+    cin >> b;
+    cout << a << " - " << b << " = " << setprecision(8) << Sub(a, b) << endl;
     }
 
     else if (menu == 3) {
-	    Mul();
+    double a, b;
+    cout << "Enter the first number: ";
+    cin >> a;
+    cout << "Enter the second number: ";
+    cin >> b;
+    cout << a << " * " << b << " = " << setprecision(8) << Mul(a, b) << endl;
     }
 
     else if (menu == 4) {
-	    Div();
+    double a, b;
+    cout << "Enter the first number: ";
+    cin >> a;
+    cout << "Enter the second number: ";
+    cin >> b;
+    cout << a << " / " << b << " = " << setprecision(8) << Div(a, b) << endl;
     }
 
     else if (menu == 5) {
-	    Sqrt();
+    double a;
+    cout << "Enter the number: ";
+    cin >> a;
+    cout << "sqrt(" << a << ") = " << Sqrt(a) << endl;
     }
 
     else if (menu == 6) {
-	    Radical();
+    double a, b;
+    cout << "Enter the number: ";
+    cin >> a;
+    cout << "The root of which degree one must extract? ";
+    cin >> b;
+    cout << "Root " << b << " of degree " << a << " is equal to " << Radical(a, b) << endl;
     }
 
     else if (menu == 7) {
-            Power();
+    double a, b;
+    cout << "Enter the number ";
+    cin >> a;
+    cout << "Enter the degree: ";
+    cin >> b;
+    cout << a << "^" << b << " = " << Power(a, b) << endl;
     }
 
     else if (menu == 8) {
-	    Percent();
+    double a, b;
+    cout << "Enter the number ";
+    cin >> a;
+    cout << "Enter percent ";
+    cin >> b;
+    cout << b << "%" << " ot " << a << " = " << Percent(a, b) << endl;
     }
 
     else if (menu == 9) {
@@ -58,72 +96,34 @@ void Error() {
     cout <<"Invalid input, try again"<< endl;
 }
 
-void Sum() {
-    double a, b;
-    cout << "Enter the first number: ";
-    cin >> a;
-    cout << "Enter the second number: ";
-    cin >> b;
-    cout << a << " + " << b << " = " << setprecision(8) << a + b << endl;
+double Sum(double a, double b) {
+    return a + b;
 }
 
-void Sub() {
-    double a, b;
-    cout << "Enter the first number: ";
-    cin >> a;
-    cout << "Enter the second number: ";
-    cin >> b;
-    cout << a << " - " << b << " = " << setprecision(8) << a - b << endl;
+double Sub(double a, double b) {
+    return a - b;  
 }
 
-void Mul() {
-    double a, b;
-    cout << "Enter the first number: ";
-    cin >> a;
-    cout << "Enter the second number: ";
-    cin >> b;
-    cout << a << " * " << b << " = " << setprecision(8) << a * b << endl;
+double Mul(double a, double b) {
+    return a * b;   
 }
 
-void Div() {
-    double a, b;
-    cout << "Enter the first number: ";
-    cin >> a;
-    cout << "Enter the second number: ";
-    cin >> b;
-    cout << a << " / " << b << " = " << setprecision(8) << a / b << endl;
+double Div(double a, double b) {
+    return a / b;   
 }
 
-void Sqrt() {
-    double a;
-    cout << "Enter the number: ";
-    cin >> a;
-    cout << "sqrt(" << a << ") = " << sqrt(a) << endl;
+double Sqrt(double a) {
+    return sqrt(a);   
 }
 
-void Radical() {
-    double a, b;
-    cout << "Enter the number: ";
-    cin >> a;
-    cout << "The root of which degree one must extract? ";
-    cin >> b;
-    cout << "Root " << b << " of degree " << a << " is equal to " << pow(a, 1 / b) << endl;
+double Radical(double a, double b) {
+    return pow(a, 1 / b);   
 }
 
-void Power() {
-    double a, b;
-    cout << "Enter the number ";
-    cin >> a;
-    cout << "Enter the degree: ";
-    cin >> b;
-    cout << a << "^" << b << " = " << pow(a, b) << endl;
+double Power(double a, double b) {
+    return pow(a, b);   
 }
 
-void Percent() {
-    double a, b;
-    cout << "Enter the number ";
-    cin >> a;
-    cout << "Enter percent ";
-    cin >> b;
-    cout << b << "%" << " ot " << a << " = " << (a * b) / 100 << endl;
+double Percent(double a, double b) {
+    return (a * b) / 100;   
 }
