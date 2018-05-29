@@ -84,6 +84,13 @@ bool menu() {
     }
 
     else if (menu == 9) {
+    double N;
+    cout << "Enter the number to calculate the factorial: ";
+    cin >> N;
+    cout << "The factorial for the number " << N << " = " << fact(N) << endl;
+    }
+ 
+    else if (menu == 10) {
 	    return true;
     } else {
 	    Error();
@@ -127,3 +134,25 @@ double Power(double a, double b) {
 double Percent(double a, double b) {
     return (a * b) / 100;   
 }
+
+long double fact(double N) {
+    if (N < 0) {
+       return 0;
+    }
+
+    if (N == 0) {
+       return 1;
+    } else {
+      return N * fact(N - 1);
+    }
+}
+
+
+
+
+
+
+
+
+
+   
