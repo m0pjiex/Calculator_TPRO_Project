@@ -1,29 +1,35 @@
-all:checkdir bin/calcul
-
-test:bin/calcul-test
-
-bin/calcul:build/calc.o build/function.o 
-	g++ build/calc.o  build/function.o -o bin/calcul -lm
-
-bin/calcul-test: build/main_test.o build/calc.o 
-	g++ Wall -Werror build/main_test.o build/calc.o -o bin/calcul-test -lm
-
-build/function.o:src/function.cpp
-	g++ -c src/function.cpp -o build/function.o -Wall -Werror
-
-build/calc.o:src/main.cpp
-	g++ -c src/main.cpp -o build/calc.o -Wall -Werror
+CC=g++
+CFLAGS=-Wall -Werror -c
 
 
-build/main_test.o: tests/main.c
-	gcc -I thirdparty -I src -c tests/main.c -o build/main_test.o
+SRC=src/
 
-checkdir:
-	@if [ -d bin  ];then echo ; else mkdir bin;fi
-	@if [ -d build  ];then echo ; else mkdir build;fi
+BUILD=build/
 
-.PHONY:clean
+BIN=bin/
 
+objects=$(BUILD)main.o $(BUILD)function.o
+
+sources=$(SRC)main.cpp $(SRC)function.cpp
+
+EXE=$(BIN)main
+
+.PHONY: all clean
+
+all: bin build $(EXE)
+
+$(EXE): $(objects)
+	$(CC) $(objects) -o $@
+
+$(BUILD)main.o: $(SRC)main.cpp 
+	$(CC) $(CFLAGS) $(SRC)main.cpp -o $@
+	
+$(BUILD)function.o: $(SRC)function.cpp $(SRC)function.h 
+	$(CC) $(CFLAGS) $(SRC)function.cpp -o $@
+	
+bin:
+	mkdir bin
+build:
+	mkdir build
 clean:
-	rm build/*.o
-	rm bin/*.exe
+	-rm -rf build bin
