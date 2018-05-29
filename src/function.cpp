@@ -13,8 +13,10 @@ bool menu() {
 
     cout << "1. Addition   2. Computation  3. Multiplication  4. Division" << endl;
     cout << "5. Square root extraction  6. Root of any degree  7. Exponentiation " << endl;
-    cout << "8. Percent  9. Factorial " << endl;	
+    cout << "8. Percent  9. Factorial " << endl;
+    cout << endl;	
     cin >> menu;
+    cout << endl;
 
     if (menu == 1) {
     double a, b;
@@ -23,6 +25,7 @@ bool menu() {
     cout << "Enter the second number: ";
     cin >> b;
     cout << a << " + " << b << " = " << setprecision(8) << Sum(a,b) << endl; 
+    cout << endl;
     }
 
     else if (menu == 2) {
@@ -32,6 +35,7 @@ bool menu() {
     cout << "Enter the second number: ";
     cin >> b;
     cout << a << " - " << b << " = " << setprecision(8) << Sub(a, b) << endl;
+    cout << endl;
     }
 
     else if (menu == 3) {
@@ -41,6 +45,7 @@ bool menu() {
     cout << "Enter the second number: ";
     cin >> b;
     cout << a << " * " << b << " = " << setprecision(8) << Mul(a, b) << endl;
+    cout << endl;
     }
 
     else if (menu == 4) {
@@ -50,6 +55,7 @@ bool menu() {
     cout << "Enter the second number: ";
     cin >> b;
     cout << a << " / " << b << " = " << setprecision(8) << Div(a, b) << endl;
+    cout << endl;
     }
 
     else if (menu == 5) {
@@ -57,6 +63,7 @@ bool menu() {
     cout << "Enter the number: ";
     cin >> a;
     cout << "sqrt(" << a << ") = " << Sqrt(a) << endl;
+    cout << endl;
     }
 
     else if (menu == 6) {
@@ -66,6 +73,7 @@ bool menu() {
     cout << "The root of which degree one must extract? ";
     cin >> b;
     cout << "Root " << b << " of degree " << a << " is equal to " << Radical(a, b) << endl;
+    cout << endl;
     }
 
     else if (menu == 7) {
@@ -75,6 +83,7 @@ bool menu() {
     cout << "Enter the degree: ";
     cin >> b;
     cout << a << "^" << b << " = " << Power(a, b) << endl;
+    cout << endl;
     }
 
     else if (menu == 8) {
@@ -84,6 +93,7 @@ bool menu() {
     cout << "Enter percent ";
     cin >> b;
     cout << b << "%" << " ot " << a << " = " << Percent(a, b) << endl;
+    cout << endl;
     }
 
     else if (menu == 9) {
@@ -93,6 +103,7 @@ bool menu() {
     for(int j = 1; j <= n; j++) {
         cout << j << "!" << " = " << fact(j) << endl;
     }
+    cout << endl;
     }
  
     else if (menu == 10) {
